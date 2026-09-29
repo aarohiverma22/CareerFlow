@@ -1,25 +1,25 @@
 import { useNavigate } from "react-router-dom";
 import { Formik, Form } from "formik";
-
 import { jobIcon } from "../../../../assets";
-import { loginValidationSchema } from "../../../../utils/validations/loginValidation";
-
 import Input from "../../../../componenets/reusable/Input";
 import Button from "../../../../componenets/reusable/Button";
+import { SIGNUP_CONTENT } from "../../../../utils/constants/contentConstant";
+import { signupValidationSchema } from "../../../../utils/validations/loginValidation";
 
-const LoginFormSection = () => {
+const SignupFormSection = () => {
   const navigate = useNavigate();
 
   const initialValues = {
+    fullName: "",
     email: "",
     password: "",
   };
 
   const handleSubmit = (values: typeof initialValues) => {
-    console.log("Login values:", values);
+    console.log("Signup values:", values);
 
     // API call will go here
-    // navigate("/dashboard");
+    // navigate("/login");
   };
 
   return (
@@ -35,22 +35,36 @@ const LoginFormSection = () => {
         {/* Heading */}
         <div className="mt-8 flex flex-col gap-2">
           <h1 className="text-3xl font-semibold text-[#1D1F23FF]">
-            Welcome Back
+            {SIGNUP_CONTENT.CREATE_HEADING}
           </h1>
 
           <p className="text-sm leading-relaxed text-[#595C61FF]">
-            Enter your credentials to access your job tracking portal.
+            {SIGNUP_CONTENT.DESC}
           </p>
         </div>
 
-        {/* Login Form */}
+        {/* Signup Form */}
         <Formik
           initialValues={initialValues}
-          validationSchema={loginValidationSchema}
+          validationSchema={signupValidationSchema}
           onSubmit={handleSubmit}
         >
           {({ values, handleChange, handleBlur, errors, touched }) => (
             <Form className="mt-7 flex w-full flex-col gap-5">
+              {/* Full Name */}
+              <Input
+                type="text"
+                label="Full Name"
+                placeholder="Enter your full name"
+                name="fullName"
+                value={values.fullName}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                trim="trim"
+                required
+                error={touched.fullName ? errors.fullName : undefined}
+              />
+
               {/* Email */}
               <Input
                 type="email"
@@ -69,7 +83,7 @@ const LoginFormSection = () => {
               <Input
                 type="password"
                 label="Password"
-                placeholder="Enter your password"
+                placeholder="Create a password"
                 name="password"
                 value={values.password}
                 onChange={handleChange}
@@ -78,36 +92,27 @@ const LoginFormSection = () => {
                 error={touched.password ? errors.password : undefined}
               />
 
-              {/* Forgot Password */}
-              {/* <div className="flex justify-end -mb-2">
-                <button
-                  type="button"
-                  onClick={() => navigate("/forgot-password")}
-                  className="text-sm font-medium text-[#4F46E5FF] hover:underline"
-                >
-                  Forgot Password?
-                </button>
-              </div> */}
-
-              {/* Signup */}
-              <div className="mt-1 flex justify-center gap-1 text-sm">
-                <span className="text-[#595C61FF]">Don't have an account?</span>
-                <button
-                  type="button"
-                  onClick={() => navigate("/signup")}
-                  className="font-medium text-[#4F46E5FF] hover:underline"
-                >
-                  Sign up
-                </button>
-              </div>
-
               {/* Submit */}
               <div className="flex w-full justify-center">
                 <Button
                   type="submit"
-                  text="Sign in to Dashboard"
+                  text="Create Account"
                   buttonClassName="w-full"
                   wrapperClassName="w-full"
+                />
+              </div>
+
+              {/* Login */}
+              <div className="mt-1 flex justify-center gap-1 text-sm">
+                <span className="text-[#595C61FF]">
+                  {SIGNUP_CONTENT.HAVE_ACCOUNT}
+                </span>
+
+                <Button
+                  type="button"
+                  text="Login here"
+                  onClick={() => navigate("/login")}
+                  buttonClassName="bg-transparent p-0 font-medium text-[#4F46E5FF] hover:underline"
                 />
               </div>
             </Form>
@@ -118,4 +123,4 @@ const LoginFormSection = () => {
   );
 };
 
-export default LoginFormSection;
+export default SignupFormSection;
