@@ -16,6 +16,7 @@ interface InputProps extends Omit<
   containerClassName?: string;
   labelClassName?: string;
   inputClassName?: string;
+  error?: string;
 }
 
 const Input = ({

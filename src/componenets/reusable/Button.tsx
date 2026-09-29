@@ -41,7 +41,7 @@ const Button = ({
         type={type}
         disabled={disabled}
         onClick={handleClick}
-        className={`inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 font-medium transition-all duration-200
+        className={`inline-flex items-center justify-center border-[#000000FF] bg-[#4F46E5FF] text-[#F6F7F9FF] gap-2 rounded-lg px-5 py-3 font-medium transition-all duration-200
           ${disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer"}
           ${buttonClassName}`}
       >
