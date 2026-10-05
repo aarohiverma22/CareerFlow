@@ -1,41 +1,47 @@
-// import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
+import PrivateRoute from "./PrivateRoute";
+import AppLayout from "../componenets/layout/AppLayout";
+
+// Pages
+// import Dashboard from "../modules/dashboard/Dashboard";
+// import Applications from "../modules/applications/Applications";
+// import Interviews from "../modules/interviews/Interviews";
+// import Analytics from "../modules/analytics/Analytics";
+// import Settings from "../modules/settings/Settings";
 
 const PrivateRoutes = () => {
   return (
-    <></>
-    // <Routes>
-    //   {/* Dashboard */}
-    //   <Route path="/dashboard" element={<Dashboard />} />
+    <Routes>
+      <Route element={<PrivateRoute />}>
+        <Route element={<AppLayout />}>
+          {/* Dashboard */}
+          {/* <Route path="dashboard" element={<Dashboard />} /> */}
 
-    //   {/* Applications */}
-    //   <Route path="/applications" element={<Applications />} />
-    //   <Route path="/applications/add" element={<AddApplication />} />
-    //   <Route
-    //     path="/applications/:id"
-    //     element={<ApplicationDetails />}
-    //   />
+          {/* Applications */}
+          {/* <Route path="applications" element={<Applications />} /> */}
+          {/* <Route path="applications/add" element={<AddApplication />} /> */}
+          {/* <Route
+            path="applications/:id"
+            element={<ApplicationDetails />}
+          /> */}
 
-    //   {/* Interviews */}
-    //   <Route path="/interviews" element={<Interviews />} />
+          {/* Interviews */}
+          {/* <Route path="interviews" element={<Interviews />} /> */}
 
-    //   {/* Analytics */}
-    //   <Route path="/analytics" element={<Analytics />} />
+          {/* Analytics */}
+          {/* <Route path="analytics" element={<Analytics />} /> */}
 
-    //   {/* Settings */}
-    //   <Route path="/settings" element={<Settings />} />
+          {/* Settings */}
+          {/* <Route path="settings" element={<Settings />} /> */}
 
-    //   {/* Default Private Route */}
-    //   <Route
-    //     path="/"
-    //     element={<Navigate to="/app/dashboard" replace />}
-    //   />
+          {/* Default */}
+          <Route index element={<Navigate to="/app/dashboard" replace />} />
 
-    //   {/* Unknown Private Route */}
-    //   <Route
-    //     path="*"
-    //     element={<Navigate to="/app/dashboard" replace />}
-    //   />
-    // </Routes>
+          {/* Unknown */}
+          <Route path="*" element={<Navigate to="/app/dashboard" replace />} />
+        </Route>
+      </Route>
+    </Routes>
   );
 };
 

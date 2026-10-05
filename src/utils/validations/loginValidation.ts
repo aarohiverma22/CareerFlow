@@ -2,6 +2,7 @@ import * as Yup from "yup";
 
 export const loginValidationSchema = Yup.object({
   email: Yup.string()
+    .trim()
     .min(5, "Email must be at least 5 characters")
     .max(50, "Email must not exceed 50 characters")
     .matches(
@@ -25,6 +26,7 @@ export const loginValidationSchema = Yup.object({
 
 export const signupValidationSchema = Yup.object({
   email: Yup.string()
+    .trim()
     .min(5, "Email must be at least 5 characters")
     .max(50, "Email must not exceed 50 characters")
     .matches(
@@ -46,6 +48,7 @@ export const signupValidationSchema = Yup.object({
     .required("Password is required"),
 
   fullName: Yup.string()
+    .trim()
     .min(3, "Full name must be at least 3 characters")
     .max(90, "Full name must not exceed 90 characters")
     .matches(

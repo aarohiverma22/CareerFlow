@@ -1,5 +1,5 @@
-import LoginFormSection from "./componenets/LoginFormSection";
-import LoginLeftSection from "./componenets/LoginLeftSection";
+import LoginFormSection from "./components/LoginFormSection";
+import LoginLeftSection from "./components/LoginLeftSection";
 
 const Login = () => {
   return (

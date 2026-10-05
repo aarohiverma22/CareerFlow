@@ -1,9 +1,8 @@
 import AppRoutes from "./routes/AppRoutes";
-import "./App.css";
 
 const App = () => {
   return (
-    <div className="app">
+    <div className="min-h-screen">
       <AppRoutes />
     </div>
   );

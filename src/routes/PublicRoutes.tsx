@@ -9,13 +9,13 @@ const PublicRoutes = () => {
       {/* Authentication */}
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/signup" element={<Signup />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
-
       {/* Default */}
       <Route path="/" element={<Navigate to="/login" replace />} />
-
       {/* Unknown Public Route */}
       <Route path="*" element={<Navigate to="/login" replace />} />
+      {/* <Route path="/applications" element={<Applications />} /> */}
     </Routes>
   );
 };
