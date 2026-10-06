@@ -58,3 +58,27 @@ export const FOOTER = {
   FOOTER_TEXT:
     "© 2026 JobTrack Pro. All job data is encrypted and private to you.",
 };
+
+//dummy data
+export const events = [
+  {
+    id: "1",
+    title: "Frontend Developer - Google",
+    start: "2026-10-08",
+  },
+  {
+    id: "2",
+    title: "React Developer - Adobe",
+    start: "2026-10-12",
+  },
+  {
+    id: "3",
+    title: "Software Developer - Microsoft",
+    start: "2026-10-17",
+  },
+  {
+    id: "4",
+    title: "Follow-up - Infosys",
+    start: "2026-10-21",
+  },
+];
