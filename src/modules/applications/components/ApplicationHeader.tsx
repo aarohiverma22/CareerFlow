@@ -6,7 +6,7 @@ import {
   Plus,
 } from "lucide-react";
 import Button from "../../../componenets/reusable/Button";
-import StatCard from "./StatCard";
+import StatCard from "../../../componenets/reusable/StatCard";
 
 const ApplicationHeader = () => {
   return (
