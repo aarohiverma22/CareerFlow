@@ -7,8 +7,11 @@ import {
 } from "lucide-react";
 import Button from "../../../componenets/reusable/Button";
 import StatCard from "../../../componenets/reusable/StatCard";
+import { useState } from "react";
+import AddApplicationModal from "./AddApplicationModal";
 
 const ApplicationHeader = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <section className="w-full">
       {/* Header */}
@@ -28,7 +31,9 @@ const ApplicationHeader = () => {
             text="Add Application"
             icon={<Plus size={18} />}
             className="w-full sm:w-auto"
-            onClick={() => {}}
+            onClick={() => {
+              setIsModalOpen(true);
+            }}
           />
         </div>
       </div>
@@ -63,6 +68,12 @@ const ApplicationHeader = () => {
           icon={<TrendingUp size={20} />}
         />
       </div>
+
+      {/* Add Application Modal */}
+      <AddApplicationModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </section>
   );
 };
