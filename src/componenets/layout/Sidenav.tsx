@@ -4,8 +4,13 @@ import { Plus, Menu, X } from "lucide-react";
 
 import { jobIcon } from "../../assets";
 import { navItems } from "../../utils/constants/contentConstant";
+import Button from "../reusable/Button";
 
-const Sidenav = () => {
+interface SidenavProps {
+  onAddApplication: () => void;
+}
+
+const Sidenav = ({ onAddApplication }: SidenavProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -93,14 +98,15 @@ const Sidenav = () => {
 
           {/* Add Application */}
           <div className="mt-auto pt-6">
-            <NavLink
-              to="/applications/add"
-              onClick={() => setIsOpen(false)}
+            <Button
+              onClick={() => {
+                setIsOpen(false);
+                onAddApplication();
+              }}
               className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#4F46E5] px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-[#4338CA]"
-            >
-              <Plus size={20} />
-              <span>Add Application</span>
-            </NavLink>
+              text="Add Application"
+              icon={<Plus size={20} />}
+            />
           </div>
         </nav>
       </aside>
