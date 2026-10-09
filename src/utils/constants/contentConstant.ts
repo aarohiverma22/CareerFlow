@@ -1,3 +1,5 @@
+import { Globe, Link } from "lucide-react";
+
 //Signup
 
 import {
@@ -80,5 +82,39 @@ export const events = [
     id: "4",
     title: "Follow-up - Infosys",
     start: "2026-10-21",
+  },
+];
+
+export const profileFields = [
+  { label: "Full Name", name: "fullName" as const },
+  { label: "Email Address", name: "email" as const },
+  { label: "Phone Number", name: "phone" as const },
+  { label: "Location", name: "location" as const },
+];
+
+export const professionalFields = [
+  { label: "Current Job Title", name: "jobTitle" as const },
+  { label: "Experience", name: "experience" as const },
+  { label: "Preferred Location", name: "preferredLocation" as const },
+];
+
+export const socilaLinks = [
+  {
+    label: "LinkedIn",
+    name: "linkedIn" as const,
+    icon: Link,
+    placeholder: "https://www.linkedin.com/in/aarohi-verma-839a56259/",
+  },
+  {
+    label: "GitHub",
+    name: "github" as const,
+    icon: Link,
+    placeholder: "https://github.com/aarohiverma22",
+  },
+  {
+    label: "Portfolio",
+    name: "portfolio" as const,
+    icon: Globe,
+    placeholder: "https://yourportfolio.com",
   },
 ];
