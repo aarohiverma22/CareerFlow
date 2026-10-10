@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-interface Column<T> {
+export interface Column<T> {
   key: keyof T;
   header?: string;
   render?: (value: T[keyof T], row: T) => ReactNode;
