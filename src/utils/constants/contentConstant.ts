@@ -1,16 +1,17 @@
-import { Globe, Link } from "lucide-react";
-import { Monitor, Moon, Sun } from "lucide-react";
-
-//Signup
-
 import {
   BriefcaseBusiness,
   CalendarDays,
   LayoutDashboard,
   Settings,
   User,
+  Globe,
+  Link,
+  Monitor,
+  Moon,
+  Sun,
 } from "lucide-react";
 
+//Signup
 export const features = [
   "Track applications across 100+ job boards",
   "Automated interview scheduling & reminders",
@@ -86,6 +87,7 @@ export const events = [
   },
 ];
 
+//Profile
 export const profileFields = [
   { label: "Full Name", name: "fullName" as const },
   { label: "Email Address", name: "email" as const },
@@ -120,6 +122,7 @@ export const socilaLinks = [
   },
 ];
 
+//Settings
 type NotificationKey =
   | "emailNotifications"
   | "interviewReminders"
@@ -157,4 +160,15 @@ export const appearanceSettingsOptions = [
   { value: "light", label: "Light", icon: Sun },
   { value: "dark", label: "Dark", icon: Moon },
   { value: "system", label: "System", icon: Monitor },
+] as const;
+
+//Dashboard
+
+export const pipelineStatuses = [
+  { label: "Applied", color: "bg-indigo-500" },
+  { label: "Screening", color: "bg-sky-500" },
+  { label: "Interview", color: "bg-purple-500" },
+  { label: "Offer", color: "bg-emerald-500" },
+  { label: "Rejected", color: "bg-rose-500" },
+  { label: "Withdrawn", color: "bg-gray-400" },
 ] as const;

@@ -7,6 +7,7 @@ import AppLayout from "../componenets/layout/AppLayout";
 import Calendar from "../modules/calendar/Calendar";
 import Profile from "../modules/profile/Profile";
 import Settings from "../modules/settings/Settings";
+import Dashboard from "../modules/dashboard/Dashboard";
 
 const PublicRoutes = () => {
   return (
@@ -19,6 +20,7 @@ const PublicRoutes = () => {
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Route>
       <Route path="/forgot-password" element={<ForgotPassword />} />
       {/* Default */}
