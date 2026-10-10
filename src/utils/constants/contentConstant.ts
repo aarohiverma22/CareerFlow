@@ -1,4 +1,5 @@
 import { Globe, Link } from "lucide-react";
+import { Monitor, Moon, Sun } from "lucide-react";
 
 //Signup
 
@@ -118,3 +119,42 @@ export const socilaLinks = [
     placeholder: "https://yourportfolio.com",
   },
 ];
+
+type NotificationKey =
+  | "emailNotifications"
+  | "interviewReminders"
+  | "applicationUpdates"
+  | "weeklySummary";
+
+export const notificationOptions: {
+  key: NotificationKey;
+  title: string;
+  description: string;
+}[] = [
+  {
+    key: "emailNotifications",
+    title: "Email Notifications",
+    description: "Receive important updates through email.",
+  },
+  {
+    key: "interviewReminders",
+    title: "Interview Reminders",
+    description: "Get reminders about upcoming interviews.",
+  },
+  {
+    key: "applicationUpdates",
+    title: "Application Updates",
+    description: "Receive reminders to update your application statuses.",
+  },
+  {
+    key: "weeklySummary",
+    title: "Weekly Summary",
+    description: "Receive a weekly overview of your job search activity.",
+  },
+];
+
+export const appearanceSettingsOptions = [
+  { value: "light", label: "Light", icon: Sun },
+  { value: "dark", label: "Dark", icon: Moon },
+  { value: "system", label: "System", icon: Monitor },
+] as const;

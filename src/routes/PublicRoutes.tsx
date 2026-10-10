@@ -6,6 +6,7 @@ import Application from "../modules/applications/Application";
 import AppLayout from "../componenets/layout/AppLayout";
 import Calendar from "../modules/calendar/Calendar";
 import Profile from "../modules/profile/Profile";
+import Settings from "../modules/settings/Settings";
 
 const PublicRoutes = () => {
   return (
@@ -17,6 +18,7 @@ const PublicRoutes = () => {
         <Route path="/applications" element={<Application />} />
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/settings" element={<Settings />} />
       </Route>
       <Route path="/forgot-password" element={<ForgotPassword />} />
       {/* Default */}
