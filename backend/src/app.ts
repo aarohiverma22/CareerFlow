@@ -2,6 +2,9 @@ import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import { env } from "./config/env.js";
+import authRoutes from "./modules/auth/auth.routes.js";
+import applicationRoutes from "./modules/applications/application.routes.js";
+import interviewRoutes from "./modules/interviews/interview.routes.js";
 
 const app = express();
 
@@ -14,6 +17,9 @@ app.use(
 );
 
 app.use(express.json());
+app.use("/api/auth", authRoutes);
+app.use("/api/applications", applicationRoutes);
+app.use("/api/interviews", interviewRoutes);
 
 app.get("/api/health", (_req, res) => {
   res.status(200).json({
