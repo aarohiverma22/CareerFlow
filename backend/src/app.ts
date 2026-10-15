@@ -4,7 +4,7 @@ import helmet from "helmet";
 import { env } from "./config/env.js";
 import authRoutes from "./modules/auth/auth.routes.js";
 import applicationRoutes from "./modules/applications/application.routes.js";
-import interviewRoutes from "./modules/interviews/interview.routes.js";
+import interviewRoutes from "./modules/interview/interview.routes.js";
 
 const app = express();
 
