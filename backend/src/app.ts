@@ -5,6 +5,8 @@ import { env } from "./config/env.js";
 import authRoutes from "./modules/auth/auth.routes.js";
 import applicationRoutes from "./modules/applications/application.routes.js";
 import interviewRoutes from "./modules/interview/interview.routes.js";
+import profileRoutes from "./modules/profile/profile.routes.js";
+import settingsRoutes from "./modules/settings/settings.routes.js";
 
 const app = express();
 
@@ -20,6 +22,8 @@ app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/applications", applicationRoutes);
 app.use("/api/interviews", interviewRoutes);
+app.use("/api/profile", profileRoutes);
+app.use("/api/settings", settingsRoutes);
 
 app.get("/api/health", (_req, res) => {
   res.status(200).json({
